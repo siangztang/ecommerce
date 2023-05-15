@@ -154,6 +154,7 @@ session_start();
                             </tr>
                         </thead>
                         <?php
+                        if(!empty($_SESSION['cart']) ){
                         foreach ($_SESSION['cart'] as $item) {
                         ?>
                             <tbody>
@@ -170,15 +171,17 @@ session_start();
                                         <h2><?php echo $item['price']; ?></h2>
                                     </td>
                                     <td>
+                                        <form>
                                         <div class="qty-box">
                                             <div class="input-group">
                                                 <input type="number" name="quantity" class="form-control input-number" value="<?php echo $item['quantity']; ?>">
                                                 <!-- <button type="button" class="btn m-1 btn-secondary">Update</button> -->
                                             </div>
                                         </div>
+                                        </form>
                                     </td>
                                     <td>
-                                        <a href="javascript:void(0)">
+                                        <a href="add_to_cart.php?delete-item=<?php echo $item['id'];?>" name="delete-item">
                                             <i class="fas fa-times"></i>
                                         </a>
                                     </td>
@@ -188,6 +191,7 @@ session_start();
                                 </tr>
                             </tbody>
                         <?php }; ?>
+                        <?php }?>
                     </table>
                 </div>
 
