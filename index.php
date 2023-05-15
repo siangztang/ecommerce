@@ -852,7 +852,7 @@ session_start();
     <script src="assets/js/lazysizes.min.js"></script>
 
     <!-- Add To Home js -->
-    <script src="assets/js/pwa.js"></script>
+    <!-- <script src="assets/js/pwa.js"></script> -->
 
     <!-- Slick js-->
     <script src="assets/js/slick/slick.js"></script>
@@ -860,7 +860,7 @@ session_start();
     <script src="assets/js/slick/custom_slick.js"></script>
 
     <!-- Timer js -->
-    <script src="assets/js/timer1.js"></script>
+    <!-- <script src="assets/js/timer1.js"></script> -->
 
     <!-- newsletter js -->
     <script src="assets/js/newsletter.js"></script>
@@ -869,7 +869,7 @@ session_start();
     <script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
 
     <!-- script js -->
-    <script src="assets/js/theme-setting.js"></script>
+    <!-- <script src="assets/js/theme-setting.js"></script> -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/home-script.js"></script>
 

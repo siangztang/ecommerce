@@ -131,14 +131,12 @@ session_start();
 
                     $total = 0;
                     $total_qty = 0;
-                    if(!empty($_SESSION['cart']) ){
+                    if (!empty($_SESSION['cart'])) {
                         foreach ($_SESSION['cart'] as $item) {
-                            
-                                $subtotal = $item['price'] * $item['quantity'];
-                                $total_qty += $item['quantity'];
-                                $total += $subtotal;
-                            
-                            
+
+                            $subtotal = $item['price'] * $item['quantity'];
+                            $total_qty += $item['quantity'];
+                            $total += $subtotal;
                         }
                     }
                     ?>
@@ -154,45 +152,46 @@ session_start();
                             </tr>
                         </thead>
                         <?php
-                        foreach ($_SESSION['cart'] as $item) {
+                        if (isset($_SESSION['cart'])) {
+
+                            foreach ($_SESSION['cart'] as $item) {
                         ?>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <a href="product-left-sidebar.html">
-                                            <img src="assets/images/fashion/product/front/1.jpg" class=" blur-up lazyload" alt="">
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="product-left-sidebar.html"><?php echo $item['name']; ?></a>
-                                    </td>
-                                    <td>
-                                        <h2><?php echo $item['price']; ?></h2>
-                                    </td>
-                                    <td>
-                                        <div class="qty-box">
-                                            <div class="input-group">
-                                            <form class="modify-quantity-form">
-                                                <input type="hidden" name="item-id" value="<?php echo $item['id']; ?>">
-                                                <input type="number" name="new-quantity" class="form-control input-number" value="<?php echo $item['quantity']; ?>" onchange="updateQuantity(this)" required>
-                                            </form>
-                                                <!-- <input type="number" name="quantity" class="form-control input-number" value="<?php echo $item['quantity']; ?>"> -->
-                                                <!-- <button type="button" class="btn m-1 btn-secondary">Update</button> -->
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="product-left-sidebar.html">
+                                                <img src="assets/images/fashion/product/front/1.jpg" class=" blur-up lazyload" alt="">
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="product-left-sidebar.html"><?php echo $item['name']; ?></a>
+                                        </td>
+                                        <td>
+                                            <h2><?php echo $item['price']; ?></h2>
+                                        </td>
+                                        <td>
+                                            <div class="qty-box">
+                                                <div class="input-group">
+                                                    <form class="modify-quantity-form">
+                                                        <input type="hidden" name="itemid" id="itemid" value="<?php echo $item['id']; ?>">
+                                                        <input type="number" name="newqty" id="newqty" class="form-control input-number" value="<?php echo $item['quantity']; ?>" onchange="updateQuantity()" required>
+                                                    </form>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                    <form class="remove-from-cart-form">
-                                        <input type="hidden" name="item-id" value="<?php echo $item['id']; ?>">
-                                        <button type="submit" name="remove-from-cart"><i class="fas fa-times"></i></button>
-                                    </form>
-                                    </td>
-                                    <td>
-                                        <h2 class="td-color"><?php echo '$ ', $item['price'] * $item['quantity']; ?></h2>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        <?php }; ?>
+                                        </td>
+                                        <td>
+                                            <form class="remove-from-cart-form">
+                                                <input type="hidden" name="item-id" value="<?php echo $item['id']; ?>">
+                                                <button type="submit" class="btn btn-outline-danger btn-sm" name="remove-from-cart">X</button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <h2 class="td-color"><?php echo '$ ', $item['price'] * $item['quantity']; ?></h2>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                        <?php }
+                        }; ?>
                     </table>
                 </div>
 
@@ -412,46 +411,13 @@ session_start();
     </footer>
     <!-- footer end -->
 
-
-    <div id="cart">
-        <h2>Cart</h2>
-
-        <?php
-        $total = 0;
-
-        foreach ($_SESSION['cart'] as $item) {
-            $subtotal = $item['price'] * $item['quantity'];
-            $total += $subtotal;
-            ?>
-
-            <div class="cart-item">
-                <span class="item-name"><?php echo $item['name']; ?></span>
-                <span class="item-quantity">
-                    <form class="modify-quantity-form">
-                        <input type="hidden" name="item-id" value="<?php echo $item['id']; ?>">
-                        <input type="number" name="new-quantity" value="<?php echo $item['quantity']; ?>" required>
-                        <button type="submit" name="modify-quantity">Update</button>
-                    </form>
-                </span>
-                <span class="item-price">$<?php echo $item['price']; ?></span>
-                <span class="item-subtotal">$<?php echo $subtotal; ?></span>
-                <form class="remove-from-cart-form">
-                    <input type="hidden" name="item-id" value="<?php echo $item['id']; ?>">
-                    <button type="submit" name="remove-from-cart">Remove</button>
-                </form>
-            </div>
-        <?php } ?>
-
-        <div id="total">Total: $<?php echo $total; ?></div>
-    </div>
-
     <div class="bg-overlay"></div>
 
     <!-- latest jquery-->
     <script src="assets/js/jquery-3.5.1.min.js"></script>
 
     <!-- Add To Home js -->
-    <script src="assets/js/pwa.js"></script>
+    <!-- <script src="assets/js/pwa.js"></script> -->
 
     <!-- Bootstrap js -->
     <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
@@ -468,13 +434,13 @@ session_start();
     <script src="assets/js/slick/custom_slick.js"></script>
 
     <!-- timer js -->
-    <script src="assets/js/count-down-timer.js"></script>
+    <!-- <script src="assets/js/count-down-timer.js"></script> -->
 
     <!-- Notify js -->
     <script src="assets/js/bootstrap/bootstrap-notify.min.js"></script>
 
     <!-- script js -->
-    <script src="assets/js/theme-setting.js"></script>
+    <!-- <script src="assets/js/theme-setting.js"></script> -->
     <script src="assets/js/script.js"></script>
 
     <!-- <script>
@@ -498,33 +464,49 @@ session_start();
         }
     </script> -->
     <script>
-        function updateQuantity(input) {
-            var form = input.closest('.modify-quantity-form');
-            var formData = form.serialize();
+        function updateQuantity() {
+            var itemid = document.getElementById("itemid").value;
+            var newqty = document.getElementById("newqty").value;
+            console.log(itemid);
+            console.log(newqty);
             $.ajax({
-                url: 'index.php',
-                type: 'POST',
-                data: formData,
-                dataType: 'json',
+                url: "test.php",
+                method: "POST",
+                data: {
+                    itemid: itemid,
+                    newqty: newqty,
+                    modifyquantity: 0
+                },
+                dataType: "json",
                 success: function(response) {
                     if (response.status === 'success') {
                         alert('Quantity updated successfully!');
                         location.reload(); // Refresh the page to update the cart
                     } else {
                         alert(response.message);
+                        location.reload();
                     }
                 }
-            });
+            })
         }
+
 
         $(document).ready(function() {
             // Handle remove from cart form submission
             $('.remove-from-cart-form').submit(function(e) {
                 e.preventDefault();
                 var form = $(this);
-                var formData = form.serialize();
+                var formData = form.serializeArray();
+
+                formData.push({
+                    name: 'remove-from-cart',
+                    value: 0
+                });
+
+                console.log(formData);
+                console.log(this);
                 $.ajax({
-                    url: 'index.php',
+                    url: 'test.php',
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
