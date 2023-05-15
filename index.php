@@ -63,10 +63,11 @@ session_start();
                             <div class="menu-left">
                                 <div class="brand-logo">
                                     <a href="index.html">
-                                        <svg class="svg-icon">
+                                        <!-- <svg class="svg-icon">
                                             <use class="fill-color" xlink:href="assets/svg/icons.svg#logo"></use>
-                                        </svg>
-                                        <img src="assets/images/logo.png" class="img-fluid blur-up lazyload" alt="logo">
+                                        </svg> -->
+                                        <!-- Put your logo here -->
+                                        <img src="" class="img-fluid blur-up lazyload" alt="logo">
                                     </a>
                                 </div>
                             </div>
@@ -288,12 +289,17 @@ session_start();
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
                                     <a href="product-left-sidebar.html" class="font-default">
-                                        <h5>Beautiful and Fresh Bookey</h5>
+                                        <h5>B</h5>
                                     </a>
-                                    <div class="input-group">
-                                        <input type="text" name="quantity" class="form-control input-number" value="1">
-                                        <button class="btn m-1 rounded-3 btn-solid-default">Add to Cart</button>
-                                    </div>
+                                    <form action="add_to_cart.php" method="POST">
+                                        <div class="input-group">
+                                            <input type="hidden" name="id" value="2">
+                                            <input type="hidden" name="name" value="B">
+                                            <input type="text" name="quantity" class="form-control input-number" value="1">
+                                            <input type="hidden" name="price" value="49">
+                                            <button class="btn m-1 rounded-3 btn-solid-default" name="add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </form>
 
                                 </div>
                             </div>

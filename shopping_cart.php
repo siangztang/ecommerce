@@ -131,15 +131,16 @@ session_start();
 
                     $total = 0;
                     $total_qty = 0;
-
-                    if (isset($_SESSION['cart'])) {
+                    if(!empty($_SESSION['cart']) ){
                         foreach ($_SESSION['cart'] as $item) {
-                            $subtotal = $item['price'] * $item['quantity'];
-                            $total_qty += $item['quantity'];
-                            $total += $subtotal;
+                            
+                                $subtotal = $item['price'] * $item['quantity'];
+                                $total_qty += $item['quantity'];
+                                $total += $subtotal;
+                            
+                            
                         }
                     }
-
                     ?>
                     <table class="table cart-table">
                         <thead>
@@ -153,46 +154,40 @@ session_start();
                             </tr>
                         </thead>
                         <?php
-                        if (isset($_SESSION['cart'])) {
-                            foreach ($_SESSION['cart'] as $item) {
-
+                        foreach ($_SESSION['cart'] as $item) {
                         ?>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="product-left-sidebar.html">
-                                                <img src="assets/images/fashion/product/front/1.jpg" class=" blur-up lazyload" alt="">
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="product-left-sidebar.html"><?php echo $item['name']; ?></a>
-                                        </td>
-                                        <td>
-                                            <h2><?php echo $item['price']; ?></h2>
-                                        </td>
-                                        <td>
-                                            <div class="qty-box">
-                                                <div class="input-group">
-                                                    <input type="number" name="quantity" class="form-control input-number" value="<?php echo $item['quantity']; ?>">
-                                                    <!-- <button type="button" class="btn m-1 btn-secondary">Update</button> -->
-                                                </div>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="product-left-sidebar.html">
+                                            <img src="assets/images/fashion/product/front/1.jpg" class=" blur-up lazyload" alt="">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="product-left-sidebar.html"><?php echo $item['name']; ?></a>
+                                    </td>
+                                    <td>
+                                        <h2><?php echo $item['price']; ?></h2>
+                                    </td>
+                                    <td>
+                                        <div class="qty-box">
+                                            <div class="input-group">
+                                                <input type="number" name="quantity" class="form-control input-number" value="<?php echo $item['quantity']; ?>">
+                                                <!-- <button type="button" class="btn m-1 btn-secondary">Update</button> -->
                                             </div>
-                                        </td>
-                                        <td>
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-times"></i>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <h2 class="td-color"><?php echo '$ ', $item['price'] * $item['quantity']; ?></h2>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                        <?php
-                            };
-                        }
-
-                        ?>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="javascript:void(0)">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <h2 class="td-color"><?php echo '$ ', $item['price'] * $item['quantity']; ?></h2>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        <?php }; ?>
                     </table>
                 </div>
 
@@ -200,7 +195,7 @@ session_start();
                     <div class="row">
                         <div class="col-sm-7 col-5 order-1">
                             <div class="left-side-button text-end d-flex d-block justify-content-end">
-                                <a href="javascript:void(0)" class="text-decoration-underline theme-color d-block text-capitalize">clear
+                                <a href="add_to_cart.php?delete-all-item" class="text-decoration-underline theme-color d-block text-capitalize">clear
                                     all items</a>
                             </div>
                         </div>
@@ -443,6 +438,27 @@ session_start();
     <!-- script js -->
     <script src="assets/js/theme-setting.js"></script>
     <script src="assets/js/script.js"></script>
+
+    <script>
+        function updateQuantity(quantity, id){
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'add_to_cart.php', true);
+            xhr.setRequestHeader('Content-Type','application/x-www-form-data');
+
+            var data = new FormData();
+            data.append('id',id);
+            data.append('newQty', quantity);
+            
+            xhr.onload = function(){
+                if(xhr.status === 200){
+                    alert("nicee");
+                }else{
+                    alert("nooo");
+                }
+            };
+            xhr.send(data);
+        }
+    </script>
 </body>
 
 </html>
