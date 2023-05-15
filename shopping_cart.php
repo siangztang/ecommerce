@@ -190,7 +190,6 @@ session_start();
                                 </tbody>
                         <?php
                             };
-                        } else {
                         }
 
                         ?>
