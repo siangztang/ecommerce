@@ -25,6 +25,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add-to-cart'])) {
     }
     header('Location: shopping_cart.php');
 }
-// $string = json_encode($_SESSION);
-// echo $string;
-// echo implode(" ", $_SESSION['cart']);
