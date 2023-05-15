@@ -154,7 +154,6 @@ session_start();
                             </tr>
                         </thead>
                         <?php
-                        if(!empty($_SESSION['cart']) ){
                         foreach ($_SESSION['cart'] as $item) {
                         ?>
                             <tbody>
@@ -171,19 +170,22 @@ session_start();
                                         <h2><?php echo $item['price']; ?></h2>
                                     </td>
                                     <td>
-                                        <form>
                                         <div class="qty-box">
                                             <div class="input-group">
-                                                <input type="number" name="quantity" class="form-control input-number" value="<?php echo $item['quantity']; ?>">
+                                            <form class="modify-quantity-form">
+                                                <input type="hidden" name="item-id" value="<?php echo $item['id']; ?>">
+                                                <input type="number" name="new-quantity" class="form-control input-number" value="<?php echo $item['quantity']; ?>" onchange="updateQuantity(this)" required>
+                                            </form>
+                                                <!-- <input type="number" name="quantity" class="form-control input-number" value="<?php echo $item['quantity']; ?>"> -->
                                                 <!-- <button type="button" class="btn m-1 btn-secondary">Update</button> -->
                                             </div>
                                         </div>
-                                        </form>
                                     </td>
                                     <td>
-                                        <a href="add_to_cart.php?delete-item=<?php echo $item['id'];?>" name="delete-item">
-                                            <i class="fas fa-times"></i>
-                                        </a>
+                                    <form class="remove-from-cart-form">
+                                        <input type="hidden" name="item-id" value="<?php echo $item['id']; ?>">
+                                        <button type="submit" name="remove-from-cart"><i class="fas fa-times"></i></button>
+                                    </form>
                                     </td>
                                     <td>
                                         <h2 class="td-color"><?php echo '$ ', $item['price'] * $item['quantity']; ?></h2>
@@ -191,7 +193,6 @@ session_start();
                                 </tr>
                             </tbody>
                         <?php }; ?>
-                        <?php }?>
                     </table>
                 </div>
 
@@ -411,6 +412,39 @@ session_start();
     </footer>
     <!-- footer end -->
 
+
+    <div id="cart">
+        <h2>Cart</h2>
+
+        <?php
+        $total = 0;
+
+        foreach ($_SESSION['cart'] as $item) {
+            $subtotal = $item['price'] * $item['quantity'];
+            $total += $subtotal;
+            ?>
+
+            <div class="cart-item">
+                <span class="item-name"><?php echo $item['name']; ?></span>
+                <span class="item-quantity">
+                    <form class="modify-quantity-form">
+                        <input type="hidden" name="item-id" value="<?php echo $item['id']; ?>">
+                        <input type="number" name="new-quantity" value="<?php echo $item['quantity']; ?>" required>
+                        <button type="submit" name="modify-quantity">Update</button>
+                    </form>
+                </span>
+                <span class="item-price">$<?php echo $item['price']; ?></span>
+                <span class="item-subtotal">$<?php echo $subtotal; ?></span>
+                <form class="remove-from-cart-form">
+                    <input type="hidden" name="item-id" value="<?php echo $item['id']; ?>">
+                    <button type="submit" name="remove-from-cart">Remove</button>
+                </form>
+            </div>
+        <?php } ?>
+
+        <div id="total">Total: $<?php echo $total; ?></div>
+    </div>
+
     <div class="bg-overlay"></div>
 
     <!-- latest jquery-->
@@ -443,7 +477,7 @@ session_start();
     <script src="assets/js/theme-setting.js"></script>
     <script src="assets/js/script.js"></script>
 
-    <script>
+    <!-- <script>
         function updateQuantity(quantity, id){
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'add_to_cart.php', true);
@@ -462,7 +496,50 @@ session_start();
             };
             xhr.send(data);
         }
+    </script> -->
+    <script>
+        function updateQuantity(input) {
+            var form = input.closest('.modify-quantity-form');
+            var formData = form.serialize();
+            $.ajax({
+                url: 'index.php',
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                success: function(response) {
+                    if (response.status === 'success') {
+                        alert('Quantity updated successfully!');
+                        location.reload(); // Refresh the page to update the cart
+                    } else {
+                        alert(response.message);
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            // Handle remove from cart form submission
+            $('.remove-from-cart-form').submit(function(e) {
+                e.preventDefault();
+                var form = $(this);
+                var formData = form.serialize();
+                $.ajax({
+                    url: 'index.php',
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            alert('Item removed from cart successfully!');
+                            console.log(response);
+                            location.reload(); // Refresh the page to update the cart
+                        }
+                    }
+                });
+            });
+        });
     </script>
+
 </body>
 
 </html>
