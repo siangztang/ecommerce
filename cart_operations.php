@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['modifyquantity'])) {
     $newQuantity = $_POST['newqty'];
 
     // Validate the new quantity
-    if ($newQuantity >= 0) {
+    if ($newQuantity > 0) {
         foreach ($_SESSION['cart'] as &$item) {
             if ($item['id'] === $itemId) {
                 $item['quantity'] = $newQuantity;
@@ -43,6 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['modifyquantity'])) {
         // Send JSON response
         header('Content-Type: application/json');
         echo json_encode(['status' => 'success']);
+        exit;
+    } else {
+        header('Content-Type: application/json');
+        echo json_encode(['status' => 'error', 'message' => 'Invalid quantity']);
         exit;
     }
 }

@@ -261,7 +261,7 @@ session_start();
                                     <a href="product-left-sidebar.html" class="font-default">
                                         <h5>A</h5>
                                     </a>
-                                    <form action="add_to_cart.php" method="POST">
+                                    <form action="cart_operations.php" method="POST">
                                         <div class="input-group">
                                             <input type="hidden" name="id" value="1">
                                             <input type="hidden" name="name" value="A">
@@ -291,7 +291,7 @@ session_start();
                                     <a href="product-left-sidebar.html" class="font-default">
                                         <h5>B</h5>
                                     </a>
-                                    <form action="add_to_cart.php" method="POST">
+                                    <form action="cart_operations.php" method="POST">
                                         <div class="input-group">
                                             <input type="hidden" name="id" value="2">
                                             <input type="hidden" name="name" value="B">

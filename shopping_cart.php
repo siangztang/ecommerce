@@ -467,10 +467,8 @@ session_start();
         function updateQuantity() {
             var itemid = document.getElementById("itemid").value;
             var newqty = document.getElementById("newqty").value;
-            console.log(itemid);
-            console.log(newqty);
             $.ajax({
-                url: "test.php",
+                url: "cart_operations.php",
                 method: "POST",
                 data: {
                     itemid: itemid,
@@ -506,7 +504,7 @@ session_start();
                 console.log(formData);
                 console.log(this);
                 $.ajax({
-                    url: 'test.php',
+                    url: 'cart_operations.php',
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
