@@ -68,10 +68,11 @@ session_start();
                             <div class="menu-left">
                                 <div class="brand-logo">
                                     <a href="index.html">
-                                        <svg class="svg-icon">
+                                        <!--<svg class="svg-icon">
                                             <use class="fill-color" xlink:href="assets/svg/icons.svg#logo"></use>
-                                        </svg>
-                                        <img src="assets/images/logo.png" class="img-fluid blur-up lazyload" alt="logo">
+                                        </svg>-->
+                                        <!-- Put your logo here-->
+                                        <img src="" class="img-fluid blur-up lazyload" alt="logo">
                                     </a>
                                 </div>
                             </div>
@@ -199,7 +200,7 @@ session_start();
                     <div class="row">
                         <div class="col-sm-7 col-5 order-1">
                             <div class="left-side-button text-end d-flex d-block justify-content-end">
-                                <a href="add_to_cart.php?delete-all-item" class="text-decoration-underline theme-color d-block text-capitalize">clear
+                                <a href="cart_operations.php?delete-all-item" class="text-decoration-underline theme-color d-block text-capitalize">clear
                                     all items</a>
                             </div>
                         </div>
