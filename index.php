@@ -249,7 +249,7 @@ session_start();
                         <div>
                             <div class="product-box">
                                 <div class="img-wrapper">
-                                    <a href="product-left-sidebar.html">
+                                    <a href="">
                                         <img src="assets/images/flower/popular/1.jpg" class="img-fluid bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
@@ -258,7 +258,7 @@ session_start();
                                         $10.00
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
-                                    <a href="product-left-sidebar.html" class="font-default">
+                                    <a href="" class="font-default">
                                         <h5>A</h5>
                                     </a>
                                     <form action="cart_operations.php" method="POST">
@@ -279,7 +279,7 @@ session_start();
                         <div>
                             <div class="product-box">
                                 <div class="img-wrapper">
-                                    <a href="product-left-sidebar.html">
+                                    <a href="">
                                         <img src="assets/images/flower/popular/1.jpg" class="img-fluid bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
@@ -288,7 +288,7 @@ session_start();
                                         $49.00
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
-                                    <a href="product-left-sidebar.html" class="font-default">
+                                    <a href="" class="font-default">
                                         <h5>B</h5>
                                     </a>
                                     <form action="cart_operations.php" method="POST">
@@ -308,7 +308,7 @@ session_start();
                         <div>
                             <div class="product-box">
                                 <div class="img-wrapper">
-                                    <a href="product-left-sidebar.html">
+                                    <a href="">
                                         <img src="assets/images/flower/popular/1.jpg" class="img-fluid bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
@@ -317,7 +317,7 @@ session_start();
                                         $49.00
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
-                                    <a href="product-left-sidebar.html" class="font-default">
+                                    <a href="" class="font-default">
                                         <h5>Beautiful and Fresh Bookey</h5>
                                     </a>
                                     <div class="input-group">
@@ -332,7 +332,7 @@ session_start();
                         <div>
                             <div class="product-box">
                                 <div class="img-wrapper">
-                                    <a href="product-left-sidebar.html">
+                                    <a href="">
                                         <img src="assets/images/flower/popular/1.jpg" class="img-fluid bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
@@ -341,7 +341,7 @@ session_start();
                                         $49.00
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
-                                    <a href="product-left-sidebar.html" class="font-default">
+                                    <a href="" class="font-default">
                                         <h5>Beautiful and Fresh Bookey</h5>
                                     </a>
                                     <div class="input-group">
@@ -356,7 +356,7 @@ session_start();
                         <div>
                             <div class="product-box">
                                 <div class="img-wrapper">
-                                    <a href="product-left-sidebar.html">
+                                    <a href="">
                                         <img src="assets/images/flower/popular/1.jpg" class="img-fluid bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
@@ -365,7 +365,7 @@ session_start();
                                         $49.00
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
-                                    <a href="product-left-sidebar.html" class="font-default">
+                                    <a href="" class="font-default">
                                         <h5>Beautiful and Fresh Bookey</h5>
                                     </a>
                                     <div class="input-group">
@@ -379,7 +379,7 @@ session_start();
                         <div>
                             <div class="product-box">
                                 <div class="img-wrapper">
-                                    <a href="product-left-sidebar.html">
+                                    <a href="">
                                         <img src="assets/images/flower/popular/1.jpg" class="img-fluid bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
@@ -388,7 +388,7 @@ session_start();
                                         $49.00
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
-                                    <a href="product-left-sidebar.html" class="font-default">
+                                    <a href="" class="font-default">
                                         <h5>Beautiful and Fresh Bookey</h5>
                                     </a>
                                     <div class="input-group">
@@ -621,7 +621,7 @@ session_start();
                                             <div class="product-box">
                                                 <div class="img-wrapper">
                                                     <div class="front">
-                                                        <a href="product-left-sidebar.html">
+                                                        <a href=" ">
                                                             <img src="assets/images/fashion/product/front/1.jpg" class="bg-img blur-up lazyload" alt="">
                                                         </a>
                                                     </div>
@@ -641,7 +641,7 @@ session_start();
                                             <div class="product-box">
                                                 <div class="img-wrapper">
                                                     <div class="front">
-                                                        <a href="product-left-sidebar.html">
+                                                        <a href=" ">
                                                             <img src="assets/images/fashion/product/front/2.jpg" class="bg-img blur-up lazyload" alt="">
                                                         </a>
                                                     </div>
@@ -661,7 +661,7 @@ session_start();
                                             <div class="product-box">
                                                 <div class="img-wrapper">
                                                     <div class="front">
-                                                        <a href="product-left-sidebar.html">
+                                                        <a href=" ">
                                                             <img src="assets/images/fashion/product/front/3.jpg" class="bg-img blur-up lazyload" alt="">
                                                         </a>
                                                     </div>
@@ -681,7 +681,7 @@ session_start();
                                             <div class="product-box">
                                                 <div class="img-wrapper">
                                                     <div class="front">
-                                                        <a href="product-left-sidebar.html">
+                                                        <a href=" ">
                                                             <img src="assets/images/fashion/product/front/4.jpg" class="bg-img blur-up lazyload" alt="">
                                                         </a>
                                                     </div>
@@ -796,7 +796,7 @@ session_start();
                                 <div class="product-btns">
                                     <a href="cart.html" class="btn btn-solid-default btn-sm" data-bs-dismiss="modal">Add
                                         to cart</a>
-                                    <a href="product-left-sidebar.html" class="btn btn-solid-default btn-sm" data-bs-dismiss="modal">View details</a>
+                                    <a href=" " class="btn btn-solid-default btn-sm" data-bs-dismiss="modal">View details</a>
                                 </div>
                             </div>
                         </div>
