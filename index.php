@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 
 <head>
-    <link rel="manifest" href="./manifest.json">
+    <!-- <link rel="manifest" href="./manifest.json"> -->
     <link rel="icon" href="assets/images/favicon/4.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/images/favicon/4.png">
     <meta name="theme-color" content="#0163d2">
@@ -62,7 +62,7 @@ session_start();
                         <div class="main-menu">
                             <div class="menu-left">
                                 <div class="brand-logo">
-                                    <a href="index.html">
+                                    <a href="index.php">
                                         <!-- <svg class="svg-icon">
                                             <use class="fill-color" xlink:href="assets/svg/icons.svg#logo"></use>
                                         </svg> -->
@@ -314,16 +314,22 @@ session_start();
                                 </div>
                                 <div class="product-details text-center">
                                     <h3 class="theme-color">
-                                        $49.00
+                                        $30.00
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
                                     <a href="" class="font-default">
-                                        <h5>Beautiful and Fresh Bookey</h5>
+                                        <h5>C</h5>
                                     </a>
-                                    <div class="input-group">
-                                        <input type="text" name="quantity" class="form-control input-number" value="1">
-                                        <button class="btn m-1 rounded-3 btn-solid-default">Add to Cart</button>
-                                    </div>
+                                    <form action="cart_operations.php" method="POST">
+                                        <div class="input-group">
+                                            <input type="hidden" name="id" value="3">
+                                            <input type="hidden" name="name" value="C">
+                                            <input type="text" name="quantity" class="form-control input-number" value="1">
+                                            <input type="hidden" name="price" value="30">
+                                            <button class="btn m-1 rounded-3 btn-solid-default" name="add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </form>
+
 
                                 </div>
                             </div>
@@ -338,16 +344,22 @@ session_start();
                                 </div>
                                 <div class="product-details text-center">
                                     <h3 class="theme-color">
-                                        $49.00
+                                        $40.00
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
                                     <a href="" class="font-default">
-                                        <h5>Beautiful and Fresh Bookey</h5>
+                                        <h5>D</h5>
                                     </a>
-                                    <div class="input-group">
-                                        <input type="text" name="quantity" class="form-control input-number" value="1">
-                                        <button class="btn m-1 rounded-3 btn-solid-default">Add to Cart</button>
-                                    </div>
+                                    <form action="cart_operations.php" method="POST">
+                                        <div class="input-group">
+                                            <input type="hidden" name="id" value="4">
+                                            <input type="hidden" name="name" value="D">
+                                            <input type="text" name="quantity" class="form-control input-number" value="1">
+                                            <input type="hidden" name="price" value="40">
+                                            <button class="btn m-1 rounded-3 btn-solid-default" name="add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </form>
+
 
                                 </div>
                             </div>
@@ -362,16 +374,23 @@ session_start();
                                 </div>
                                 <div class="product-details text-center">
                                     <h3 class="theme-color">
-                                        $49.00
+                                        $50.00
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
                                     <a href="" class="font-default">
-                                        <h5>Beautiful and Fresh Bookey</h5>
+                                        <h5>E</h5>
                                     </a>
-                                    <div class="input-group">
-                                        <input type="text" name="quantity" class="form-control input-number" value="1">
-                                        <button class="btn m-1 rounded-3 btn-solid-default">Add to Cart</button>
-                                    </div>
+                                    <form action="cart_operations.php" method="POST">
+                                        <div class="input-group">
+                                            <input type="hidden" name="id" value="5">
+                                            <input type="hidden" name="name" value="E">
+                                            <input type="text" name="quantity" class="form-control input-number" value="1">
+                                            <input type="hidden" name="price" value="50">
+                                            <button class="btn m-1 rounded-3 btn-solid-default" name="add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </form>
+
+
                                 </div>
                             </div>
                         </div>
@@ -385,16 +404,22 @@ session_start();
                                 </div>
                                 <div class="product-details text-center">
                                     <h3 class="theme-color">
-                                        $49.00
+                                        $60.00
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
                                     <a href="" class="font-default">
-                                        <h5>Beautiful and Fresh Bookey</h5>
+                                        <h5>F</h5>
                                     </a>
-                                    <div class="input-group">
-                                        <input type="text" name="quantity" class="form-control input-number" value="1">
-                                        <button class="btn m-1 rounded-3 btn-solid-default">Add to Cart</button>
-                                    </div>
+                                    <form action="cart_operations.php" method="POST">
+                                        <div class="input-group">
+                                            <input type="hidden" name="id" value="6">
+                                            <input type="hidden" name="name" value="F">
+                                            <input type="text" name="quantity" class="form-control input-number" value="1">
+                                            <input type="hidden" name="price" value="60">
+                                            <button class="btn m-1 rounded-3 btn-solid-default" name="add-to-cart">Add to Cart</button>
+                                        </div>
+                                    </form>
+
 
                                 </div>
                             </div>
@@ -419,7 +444,7 @@ session_start();
 
 
     <!-- footer start -->
-    <footer class="footer-sm-space">
+    <!-- <footer class="footer-sm-space">
         <div class="main-footer">
             <div class="container">
                 <div class="row gy-4">
@@ -573,11 +598,11 @@ session_start();
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- footer end -->
 
     <!-- Cart Successful Start -->
-    <div class="modal fade cart-modal" id="addtocart" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade cart-modal" id="addtocart" tabindex="-1" role="dialog" aria-label="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content ">
                 <div class="modal-header">
@@ -704,11 +729,11 @@ session_start();
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Cart Successful End -->
 
     <!-- Quick view modal start -->
-    <div class="modal fade quick-view-modal" id="quick-view">
+    <!-- <div class="modal fade quick-view-modal" id="quick-view">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -804,11 +829,11 @@ session_start();
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Quick view modal end -->
 
     <!-- Newsletter modal start -->
-    <div class="modal fade newletter-modal" id="newsletter">
+    <!-- <div class="modal fade newletter-modal" id="newsletter">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -834,7 +859,7 @@ session_start();
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Newsletter modal end -->
 
     <div class="bg-overlay"></div>
