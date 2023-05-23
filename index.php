@@ -250,23 +250,23 @@ session_start();
                             <div class="product-box">
                                 <div class="img-wrapper">
                                     <a href="">
-                                        <img src="assets/images/flower/popular/1.jpg" class="img-fluid bg-img blur-up lazyload" alt="">
+                                        <img src="assets/images/motor.jpg" class="img-fluid bg-img blur-up lazyload" alt="">
                                     </a>
                                 </div>
                                 <div class="product-details text-center">
                                     <h3 class="theme-color">
-                                        $10.00
+                                        $8
                                         <!-- <span class="font-light ml-1">$52.00</span> -->
                                     </h3>
                                     <a href="" class="font-default">
-                                        <h5>A</h5>
+                                        <h5>Motorcycle Handlebar(Grand Opening Promotion!)</h5>
                                     </a>
                                     <form action="cart_operations.php" method="POST">
                                         <div class="input-group">
                                             <input type="hidden" name="id" value="1">
-                                            <input type="hidden" name="name" value="A">
+                                            <input type="hidden" name="name" value="Motorcycle Handlebar">
                                             <input type="text" name="quantity" class="form-control input-number" value="1">
-                                            <input type="hidden" name="price" value="10">
+                                            <input type="hidden" name="price" value="8">
                                             <button class="btn m-1 rounded-3 btn-solid-default" name="add-to-cart">Add to Cart</button>
                                         </div>
                                     </form>
